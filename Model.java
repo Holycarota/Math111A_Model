@@ -29,9 +29,13 @@ public class Model {
 	{
 		ArrayList<ArrayList<Double>> output = new ArrayList<ArrayList<Double>>();
 		ArrayList<Double> temp;
-		for(double x = -33; x<34; x++)
+		int min_X = -33;
+		int max_X = 34;
+		int min_Y = 0;
+		int max_Y = 36;
+		for(double x = min_X; x<max_X; x++)
 		{
-			for(double y = 0; y<36; y++)
+			for(double y = min_Y; y<max_Y; y++)
 			{
 				temp = decision(x,y);
 				if(temp!=null)
@@ -47,13 +51,16 @@ public class Model {
 	*/
 	public static double Distance_to_goal(double x, double y, boolean left)
 	{
+		double goal_right_corner_X = 3.55;
+		double goal_corner_Y = 52.5;
+		double goal_left_corner_X = -3.55;
 		if(left == true)
 		{
-			return Math.sqrt((x+3.55)*(x+3.55)+ (y-52.5)*(y-52.5));
+			return Math.sqrt((x-goal_left_corner_X)*(x-goal_left_corner_X)+ (y-goal_corner_Y)*(y-goal_corner_Y));
 		}
 		else
 		{
-			return Math.sqrt(Math.pow(x-3.55, 2)+ Math.pow(y-52.5, 2));
+			return Math.sqrt(Math.pow(x-goal_right_corner_X, 2)+ Math.pow(y-goal_corner_Y, 2));
 		}
 	}	
 	/*
@@ -63,14 +70,17 @@ public class Model {
 	public static double horizontal_angle(double x, double y, boolean left)
 	{
 		double angle;	
+		double goal_right_corner_X = 3.55;
+		double goal_corner_Y = 52.5;
+		double goal_left_corner_X = -3.55;
 		if(left == true)
 		{
-			angle = Math.atan(Math.abs(y-52.5)/Math.abs(x+3.55));
+			angle = Math.atan(Math.abs(y-goal_corner_Y)/Math.abs(x-goal_left_corner_X));
 			return 90-angle*180/Math.PI;
 		}
 		else
 		{
-			angle = Math.atan(Math.abs(y-52.5)/Math.abs(x-3.55));
+			angle = Math.atan(Math.abs(y-goal_corner_Y)/Math.abs(x-goal_right_corner_X));
 			return 90-angle*180/Math.PI;
 		}
 	}
