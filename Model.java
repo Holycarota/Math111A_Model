@@ -9,17 +9,11 @@ public class Model {
 	
 
 	public static void main(String[] args) throws FileNotFoundException {
-		// TODO Auto-generated method stub
 		Instant start = Instant.now();
 		write();
 		Instant end = Instant.now();
 		Duration interval = Duration.between(start,end);
-		System.out.println("Execution time in seconds: " + interval.getSeconds());
-		//System.out.println(output.size());
-		/*ArrayList<Double> output = decision(-33,0);
-		System.out.println(output);*/
-		
-		
+		System.out.println("Execution time in seconds: " + interval.getSeconds());	
 	}
 	public static ArrayList<ArrayList<Double>> control()
 	{
@@ -29,8 +23,6 @@ public class Model {
 		{
 			for(double y = 0; y<36; y++)
 			{
-				//System.out.println("x is: " + x);
-				//System.out.println("y is: " +y);
 				temp = decision(x,y);
 				if(temp!=null)
 				{
@@ -48,7 +40,6 @@ public class Model {
 		}
 		else
 		{
-			//System.out.println("it runs here");
 			return Math.sqrt(Math.pow(x-3.55, 2)+ Math.pow(y-52.5, 2));
 		}
 	}	
@@ -87,8 +78,7 @@ public class Model {
 					if(d_vertical>2 && d_vertical<2.33) // check if the ball passes through the corner
 					{
 						double overall_velocity = 
-								Math.sqrt(V_vi*V_vi + V_horizon*V_horizon);//make sure the overall velocity
-																		
+								Math.sqrt(V_vi*V_vi + V_horizon*V_horizon);//make sure the overall velocity																		
 						if(overall_velocity<=33){
 							ArrayList<Double> pair = new ArrayList<Double>();
 							pair.add(V_horizon);
@@ -202,8 +192,7 @@ public class Model {
 				sb.append("\n");
 			}
 			writer.write(sb.toString());
-			System.out.println("done!");
-			
+			System.out.println("done!");			
 		} catch(FileNotFoundException e) {
 			System.out.println(e.getMessage());
 		}
