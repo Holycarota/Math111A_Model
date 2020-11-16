@@ -72,7 +72,7 @@ public class Model {
 		double defensive_location = 9.144;
 		double defensive_height = 1.824;
 		double gravity = 9.81;
-	    ArrayList<ArrayList<Double>> list = new ArrayList();
+	    ArrayList<ArrayList<Double>> list = new ArrayList<ArrayList<Double>>();
 	    if(distance/2 > max_velocity){
 	    	return null;}
 		for(double V_horizon = distance/2; V_horizon<=33; V_horizon = V_horizon + 0.01){
@@ -90,7 +90,7 @@ public class Model {
 								Math.sqrt(V_vi*V_vi + V_horizon*V_horizon);//make sure the overall velocity
 																		
 						if(overall_velocity<=33){
-							ArrayList<Double> pair = new ArrayList();
+							ArrayList<Double> pair = new ArrayList<Double>();
 							pair.add(V_horizon);
 							pair.add(V_vi);
 							list.add(pair);}
