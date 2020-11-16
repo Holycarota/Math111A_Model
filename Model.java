@@ -1,3 +1,8 @@
+/*
+Author: Shanchuan You
+Email: shy228@ucsd.edu
+This file is for Math 111A FALL 2020 only.
+*/
 import java.util.*;
 import java.lang.Math;
 import java.time.*;
