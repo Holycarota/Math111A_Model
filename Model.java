@@ -244,7 +244,7 @@ public class Model {
 					sb.append(result.get(i).get(j));
 					sb.append(",");
 				}
-				sb.append(result.get(i).get(result.get(i).size()-1));
+				sb.append((result.get(i).get(result.get(i).size()-1)).intValue());
 				sb.append("\n");
 			}
 			writer.write(sb.toString());
