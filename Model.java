@@ -88,7 +88,7 @@ public class Model {
 					{
 						double overall_velocity = 
 								Math.sqrt(V_vi*V_vi + V_horizon*V_horizon);//make sure the overall velocity
-																			//does not exceed 33 m/s
+																		
 						if(overall_velocity<=33){
 							ArrayList<Double> pair = new ArrayList();
 							pair.add(V_horizon);
