@@ -199,6 +199,7 @@ public class Model {
 			output.add(left_horizontal_angle);
 			output.add(left_vertical_angle);
 			output.add(left_overall);
+			output.add(left_distance);
 			output.add(1.0);
 			return output;			
 		}
@@ -211,6 +212,7 @@ public class Model {
 			output.add(right_horizontal_angle);
 			output.add(right_vertical_angle);
 			output.add(right_overall);
+			output.add(right_distance);
 			output.add(0.0);
 			return output;	
 		}
@@ -234,6 +236,8 @@ public class Model {
 			sb.append("Vertical_Angle");
 			sb.append(",");
 			sb.append("Velocity");
+			sb.append(",");
+			sb.append("Distance_to_goal");
 			sb.append(",");
 			sb.append("IfLeft");
 			sb.append("\n");
